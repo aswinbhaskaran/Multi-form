@@ -11,7 +11,7 @@ function Plan({ h1, p, id, prev, next }) {
 				<div id="plan-details">
 					<div>
 						<img
-							src="./images/icon-arcade.svg"
+							src="../images/icon-arcade.svg"
 							alt="Arcade plan"
 						/>
 
@@ -24,7 +24,7 @@ function Plan({ h1, p, id, prev, next }) {
 
 					<div>
 						<img
-							src="./images/icon-advanced.svg"
+							src="../images/icon-advanced.svg"
 							alt="Advanced plan"
 						/>
 
@@ -36,7 +36,7 @@ function Plan({ h1, p, id, prev, next }) {
 					</div>
 
 					<div>
-						<img src="./images/icon-pro.svg" alt="Pro plan" />
+						<img src="../images/icon-pro.svg" alt="Pro plan" />
 
 						<div>
 							<span>Pro</span>
