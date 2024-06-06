@@ -1,6 +1,6 @@
 import Aside from './Aside'
 import Section from './Section'
-import '../styles/nesting-style.css'
+import '../styles/style.css'
 import { useState } from 'react'
 
 const els = [{id: 1, h1: 'Personal info', p: 'Please provide your name, email address, and phone number.', eID: 'personal-form'},
