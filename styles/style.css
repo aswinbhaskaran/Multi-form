@@ -226,6 +226,22 @@ aside li
 	}
 }
 
+#plan-form
+{
+	display: flex;
+	flex-direction: column;
+	gap: 50px;
+
+	#plan-period-option
+	{
+		background-color: hsl(229, 24%, 87%, .2);
+		padding: 25px 0;
+		display: flex;
+		justify-content: center;
+		border-radius: 10px
+	}
+}
+
 #plan-details
 {
 	display: flex;
