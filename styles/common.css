@@ -1,0 +1,39 @@
+@import url(./font.css);
+
+.active::before {
+	background-color: var(--bg);
+	color: var(--color);
+	border: none;
+}
+
+.d-none {
+	display: none;
+}
+
+.d-flex {
+	display: flex;
+}
+
+:root {
+	--bg: hsl(206, 94%, 96%);
+	--color-white: white;
+	--shadow: rgb(0, 0, 0, 0.15);
+	--color: hsl(213, 96%, 18%);
+	--text-secondary: hsl(231, 11%, 63%);
+	--color-danger: hsl(354, 84%, 57%);
+}
+
+html {
+	font-size: 10px;
+}
+
+body {
+	font-family: Ubuntu, sans-serif;
+	font-size: 1.6rem;
+	color: var(--color);
+	letter-spacing: 0.2rem;
+}
+
+:is(html, body) {
+	height: 100%;
+}

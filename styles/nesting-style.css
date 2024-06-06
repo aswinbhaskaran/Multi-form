@@ -1,0 +1,247 @@
+body {
+	background-color: var(--bg);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 30px;
+}
+
+:is(body, section :is(h1, p)) {
+	margin: 0;
+}
+
+#root {
+	background-color: var(--color-white);
+	width: 60%;
+	height: 65%;
+	border-radius: 15px;
+	box-shadow: 0 50px 80px -30px var(--shadow);
+	padding: 15px 0 15px 15px;
+	display: flex;
+
+	& > aside {
+		background-image: url(../images/bg-sidebar-desktop.svg);
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		width: 30%;
+		height: 100%;
+		border-radius: 10px;
+		color: var(--color-white);
+		padding: 20px 30px;
+		box-sizing: border-box;
+
+		& > ul {
+			margin: 0;
+			text-transform: uppercase;
+			list-style-type: none;
+			padding: 0;
+			counter-reset: bullet;
+			display: flex;
+			flex-direction: column;
+			gap: 45px;
+		}
+	}
+
+	& > section {
+		width: 70%;
+		height: 90%;
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		gap: 50px;
+		padding: 50px 102px 0;
+
+		& > header {
+			display: flex;
+			flex-direction: column;
+			gap: 10px;
+		}
+
+		& h1 {
+			font-size: 2.6rem;
+		}
+
+		& p {
+			color: var(--text-secondary);
+			font-size: 1.6rem;
+		}
+
+		& > span {
+			position: absolute;
+			bottom: 15px;
+			color: var(--text-secondary);
+			font-weight: 700;
+
+			@media screen and (width >= 1440px) {
+				cursor: pointer;
+			}
+		}
+
+		& > button {
+			align-self: flex-end;
+			position: absolute;
+			bottom: 0;
+			background-color: var(--color);
+			color: var(--color-white);
+			border: none;
+			border-radius: 10px;
+			padding: 15px 25px;
+			font-family: Ubuntu, sans-serif;
+
+			@media screen and (width >= 1440px) {
+				cursor: pointer;
+			}
+		}
+
+		& > :is(span, button) {
+			font-size: 1.7rem;
+		}
+	}
+
+	#personal-form {
+		display: flex;
+		flex-direction: column;
+		gap: 30px;
+
+		& > div {
+			display: flex;
+			flex-direction: column;
+			gap: 10px;
+		}
+
+		& label {
+			display: flex;
+			justify-content: space-between;
+
+			&::before {
+				content: attr(data-label);
+			}
+
+			&::after {
+				content: attr(data-invalid);
+				color: var(--color-danger);
+				font-weight: 700;
+			}
+		}
+
+		& input {
+			border: 1px solid var(--text-secondary);
+			background-color: transparent;
+			border-radius: 10px;
+			padding: 15px;
+			font-family: inherit;
+			font-size: 1.4rem;
+			letter-spacing: 0.08rem;
+			color: var(--color);
+
+			@media screen and (width >= 1440px) {
+				&:hover {
+					cursor: pointer;
+					outline: 1px solid var(--color);
+				}
+			}
+
+			&:focus {
+				outline: 1px solid var(--color);
+			}
+
+			&.invalid {
+				outline: 1px solid var(--color-danger);
+			}
+		}
+	}
+}
+
+aside li {
+	counter-increment: bullet;
+	display: grid;
+	grid-template-areas: 'counter step' 'counter text';
+	grid-template-columns: 36px 1fr;
+	grid-gap: 5px 15px;
+
+	@media screen and (width >= 1440px) {
+		cursor: pointer;
+	}
+
+	&::before {
+		content: counter(bullet);
+		aspect-ratio: 1 / 1;
+		border-radius: 50%;
+		grid-area: counter;
+		align-self: center;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	&:not(.active)::before {
+		border: 1px solid var(--color-white);
+	}
+
+	&:not(.active):hover::before {
+		border: 2px solid var(--bg);
+	}
+
+	& > :first-child {
+		grid-area: step;
+		font-size: 1.4rem;
+	}
+
+	& > :last-child {
+		grid-area: text;
+		font-weight: 700;
+	}
+}
+
+#plan-details {
+	display: flex;
+	height: 200px;
+	gap: 20px;
+
+	& > div {
+		border: 1px solid var(--text-secondary);
+		flex-grow: 1;
+		border-radius: 10px;
+		padding: 20px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+
+		& > div {
+			display: flex;
+			flex-direction: column;
+		}
+
+		& span {
+			&:first-of-type {
+				font-size: 2rem;
+				font-weight: 700;
+			}
+
+			&:last-of-type {
+				color: var(--text-secondary);
+				font-size: 1.7rem;
+			}
+		}
+	}
+
+	& img {
+		width: 50px;
+	}
+}
+
+.attribution {
+	font-size: 1.1rem;
+	text-align: center;
+
+	& a {
+		color: hsl(228, 45%, 44%);
+	}
+}
+
+::placeholder {
+	font-weight: 700;
+	font-size: 1.4rem;
+}
