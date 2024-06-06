@@ -1,6 +1,6 @@
-function Plan({ h1, p, id, prev, next }) {
-	return (
-		<>
+function Plan({h1, p, id, prev, next})
+{
+	return (<>
 			<header>
 				<h1>{h1}</h1>
 
@@ -10,10 +10,7 @@ function Plan({ h1, p, id, prev, next }) {
 			<div id={id}>
 				<div id="plan-details">
 					<div>
-						<img
-							src="../images/icon-arcade.svg"
-							alt="Arcade plan"
-						/>
+						<img src="../images/icon-arcade.svg" alt="Arcade plan"/>
 
 						<div>
 							<span>Arcade</span>
@@ -23,10 +20,7 @@ function Plan({ h1, p, id, prev, next }) {
 					</div>
 
 					<div>
-						<img
-							src="../images/icon-advanced.svg"
-							alt="Advanced plan"
-						/>
+						<img src="../images/icon-advanced.svg" alt="Advanced plan"/>
 
 						<div>
 							<span>Advanced</span>
@@ -46,7 +40,13 @@ function Plan({ h1, p, id, prev, next }) {
 					</div>
 				</div>
 
-				<div id="plan-period-option"></div>
+				<div id="plan-period-option">
+					<span>Monthly</span>
+
+					<input type="checkbox"/>
+					
+					<span>Yearly</span>
+				</div>
 			</div>
 
 			<span onClick={prev}>Go Back</span>
@@ -54,8 +54,7 @@ function Plan({ h1, p, id, prev, next }) {
 			{/* <button type="button" onClick={next}>
 				Next Step
 			</button> */}
-		</>
-	);
+		</>)
 }
 
-export default Plan;
+export default Plan

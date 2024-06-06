@@ -1,6 +1,6 @@
-function Aside() {
-	return (
-		<aside>
+function Aside()
+{
+	return (<aside>
 			<ul>
 				<li className="active">
 					<span>Step 1</span>
@@ -22,8 +22,7 @@ function Aside() {
 					<span>Summary</span>
 				</li>
 			</ul>
-		</aside>
-	);
+		</aside>)
 }
 
-export default Aside;
+export default Aside

@@ -1,17 +1,20 @@
-body {
+body
+{
 	background-color: var(--bg);
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	gap: 30px;
+	gap: 30px
 }
 
-:is(body, section :is(h1, p)) {
-	margin: 0;
+:is(body, section :is(h1, p))
+{
+	margin: 0
 }
 
-#root {
+#root
+{
 	background-color: var(--color-white);
 	width: 60%;
 	height: 65%;
@@ -20,7 +23,8 @@ body {
 	padding: 15px 0 15px 15px;
 	display: flex;
 
-	& > aside {
+	& > aside
+	{
 		background-image: url(../images/bg-sidebar-desktop.svg);
 		background-position: center;
 		background-repeat: no-repeat;
@@ -32,7 +36,8 @@ body {
 		padding: 20px 30px;
 		box-sizing: border-box;
 
-		& > ul {
+		& > ul
+		{
 			margin: 0;
 			text-transform: uppercase;
 			list-style-type: none;
@@ -40,11 +45,12 @@ body {
 			counter-reset: bullet;
 			display: flex;
 			flex-direction: column;
-			gap: 45px;
+			gap: 45px
 		}
 	}
 
-	& > section {
+	& > section
+	{
 		width: 70%;
 		height: 90%;
 		position: relative;
@@ -53,33 +59,39 @@ body {
 		gap: 50px;
 		padding: 50px 102px 0;
 
-		& > header {
+		& > header
+		{
 			display: flex;
 			flex-direction: column;
-			gap: 10px;
+			gap: 10px
 		}
 
-		& h1 {
-			font-size: 2.6rem;
+		& h1
+		{
+			font-size: 2.6rem
 		}
 
-		& p {
+		& p
+		{
 			color: var(--text-secondary);
-			font-size: 1.6rem;
+			font-size: 1.6rem
 		}
 
-		& > span {
+		& > span
+		{
 			position: absolute;
 			bottom: 15px;
 			color: var(--text-secondary);
 			font-weight: 700;
 
-			@media screen and (width >= 1440px) {
-				cursor: pointer;
+			@media screen and (width >= 1440px)
+			{
+				cursor: pointer
 			}
 		}
 
-		& > button {
+		& > button
+		{
 			align-self: flex-end;
 			position: absolute;
 			bottom: 0;
@@ -90,43 +102,51 @@ body {
 			padding: 15px 25px;
 			font-family: Ubuntu, sans-serif;
 
-			@media screen and (width >= 1440px) {
-				cursor: pointer;
+			@media screen and (width >= 1440px)
+			{
+				cursor: pointer
 			}
 		}
 
-		& > :is(span, button) {
+		& > :is(span, button)
+		{
 			font-size: 1.7rem;
 		}
 	}
 
-	#personal-form {
+	#personal-form
+	{
 		display: flex;
 		flex-direction: column;
 		gap: 30px;
 
-		& > div {
+		& > div
+		{
 			display: flex;
 			flex-direction: column;
-			gap: 10px;
+			gap: 10px
 		}
 
-		& label {
+		& label
+		{
 			display: flex;
 			justify-content: space-between;
 
-			&::before {
-				content: attr(data-label);
+			&::before
+			{
+				content: attr(data-label)
 			}
 
-			&::after {
+			&::after
+			{
 				content: attr(data-invalid);
 				color: var(--color-danger);
-				font-weight: 700;
+				font-weight: 700
 			}
 		}
 
-		& input {
+		& input
+		{
 			border: 1px solid var(--text-secondary);
 			background-color: transparent;
 			border-radius: 10px;
@@ -136,36 +156,43 @@ body {
 			letter-spacing: 0.08rem;
 			color: var(--color);
 
-			@media screen and (width >= 1440px) {
-				&:hover {
+			@media screen and (width >= 1440px)
+			{
+				&:hover
+				{
 					cursor: pointer;
-					outline: 1px solid var(--color);
+					outline: 1px solid var(--color)
 				}
 			}
 
-			&:focus {
-				outline: 1px solid var(--color);
+			&:focus
+			{
+				outline: 1px solid var(--color)
 			}
 
-			&.invalid {
-				outline: 1px solid var(--color-danger);
+			&.invalid
+			{
+				outline: 1px solid var(--color-danger)
 			}
 		}
 	}
 }
 
-aside li {
+aside li
+{
 	counter-increment: bullet;
 	display: grid;
 	grid-template-areas: 'counter step' 'counter text';
 	grid-template-columns: 36px 1fr;
 	grid-gap: 5px 15px;
 
-	@media screen and (width >= 1440px) {
-		cursor: pointer;
+	@media screen and (width >= 1440px)
+	{
+		cursor: pointer
 	}
 
-	&::before {
+	&::before
+	{
 		content: counter(bullet);
 		aspect-ratio: 1 / 1;
 		border-radius: 50%;
@@ -173,34 +200,40 @@ aside li {
 		align-self: center;
 		display: flex;
 		justify-content: center;
-		align-items: center;
+		align-items: center
 	}
 
-	&:not(.active)::before {
-		border: 1px solid var(--color-white);
+	&:not(.active)::before
+	{
+		border: 1px solid var(--color-white)
 	}
 
-	&:not(.active):hover::before {
-		border: 2px solid var(--bg);
+	&:not(.active):hover::before
+	{
+		border: 2px solid var(--bg)
 	}
 
-	& > :first-child {
+	& > :first-child
+	{
 		grid-area: step;
-		font-size: 1.4rem;
+		font-size: 1.4rem
 	}
 
-	& > :last-child {
+	& > :last-child
+	{
 		grid-area: text;
-		font-weight: 700;
+		font-weight: 700
 	}
 }
 
-#plan-details {
+#plan-details
+{
 	display: flex;
 	height: 200px;
 	gap: 20px;
 
-	& > div {
+	& > div
+	{
 		border: 1px solid var(--text-secondary);
 		flex-grow: 1;
 		border-radius: 10px;
@@ -209,39 +242,47 @@ aside li {
 		flex-direction: column;
 		justify-content: space-between;
 
-		& > div {
+		& > div
+		{
 			display: flex;
-			flex-direction: column;
+			flex-direction: column
 		}
 
-		& span {
-			&:first-of-type {
+		& span
+		{
+			&:first-of-type
+			{
 				font-size: 2rem;
-				font-weight: 700;
+				font-weight: 700
 			}
 
-			&:last-of-type {
+			&:last-of-type
+			{
 				color: var(--text-secondary);
-				font-size: 1.7rem;
+				font-size: 1.7rem
 			}
 		}
 	}
 
-	& img {
-		width: 50px;
+	& img 
+	{
+		width: 50px
 	}
 }
 
-.attribution {
+.attribution
+{
 	font-size: 1.1rem;
 	text-align: center;
 
-	& a {
-		color: hsl(228, 45%, 44%);
+	& a
+	{
+		color: hsl(228, 45%, 44%)
 	}
 }
 
-::placeholder {
+::placeholder
+{
 	font-weight: 700;
-	font-size: 1.4rem;
+	font-size: 1.4rem
 }

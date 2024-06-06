@@ -1,28 +1,16 @@
-import Aside from './Aside';
-import Section from './Section';
-import '../styles/nesting-style.css';
-import { useState } from 'react';
+import Aside from './Aside'
+import Section from './Section'
+import '../styles/nesting-style.css'
+import { useState } from 'react'
 
-const els = [
-	{
-		id: 1,
-		h1: 'Personal info',
-		p: 'Please provide your name, email address, and phone number.',
-		eID: 'personal-form',
-	},
-	{
-		id: 2,
-		h1: 'Select your plan',
-		p: 'You have the option of monthly or yearly billing',
-		eID: 'plan-form',
-	},
-];
+const els = [{id: 1, h1: 'Personal info', p: 'Please provide your name, email address, and phone number.', eID: 'personal-form'},
+	{id: 2, h1: 'Select your plan', p: 'You have the option of monthly or yearly billing', eID: 'plan-form'}]
 
-function App() {
-	const [elementID, setElementID] = useState(1);
+function App()
+{
+	const [elementID, setElementID] = useState(1)
 
-	return (
-		<>
+	return (<>
 			<Aside />
 			<Section
 				els={els}
@@ -30,8 +18,7 @@ function App() {
 				prev={() => setElementID(elementID - 1)}
 				next={() => setElementID(elementID + 1)}
 			/>
-		</>
-	);
+		</>)
 }
 
-export default App;
+export default App
