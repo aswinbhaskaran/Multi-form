@@ -1,6 +1,7 @@
 import Aside from './Aside'
 import Section from './Section'
 import { useState } from 'react'
+// import '../styles/nesting-style.css'
 
 CSS.supports('selector(&)') ? import('../styles/nesting-style.css') : import('../styles/non-nesting-style.css')
 
@@ -12,7 +13,8 @@ function App()
 	const [elementID, setElementID] = useState(1)
 
 	return (<>
-			<Aside />
+			<Aside cur={elementID}/>
+			
 			<Section els={els} id={elementID} prev={() => setElementID(elementID - 1)} next={() => setElementID(elementID + 1)}/>
 		</>)
 }

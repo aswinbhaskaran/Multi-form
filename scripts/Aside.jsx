@@ -1,26 +1,16 @@
-function Aside()
+import Li from './Li'
+
+function Aside({cur})
 {
 	return (<aside>
 			<ul>
-				<li className="active">
-					<span>Step 1</span>
-					<span>Your info</span>
-				</li>
+				<Li key='1' cur={cur} s1='Step 1' s2='Your info'/>
 
-				<li>
-					<span>Step 2</span>
-					<span>Select plan</span>
-				</li>
-
-				<li>
-					<span>Step 3</span>
-					<span>Add-ons</span>
-				</li>
-
-				<li>
-					<span>Step 4</span>
-					<span>Summary</span>
-				</li>
+				<Li key='2' cur={cur} s1='Step 2' s2='Select plan'/>
+				
+				<Li key='3' cur={cur} s1='Step 3' s2='Add-ons'/>
+				
+				<Li key='4' cur={cur} s1='Step 4' s2='Summary'/>
 			</ul>
 		</aside>)
 }

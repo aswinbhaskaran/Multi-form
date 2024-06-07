@@ -98,6 +98,7 @@ body
 			border-radius: 10px;
 			padding: 15px 25px;
 			font-family: inherit;
+			letter-spacing: .08rem;
 
 			@media screen and (width >= 1440px)
 			{
