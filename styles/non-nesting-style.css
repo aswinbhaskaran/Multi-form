@@ -1,0 +1,252 @@
+body
+{
+    background-color: var(--bg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px
+}
+
+:is(body, section :is(h1, p))
+{
+    margin: 0
+}
+
+#root
+{
+    background-color: var(--color-white);
+    height: 60rem;
+    border-radius: 15px;
+    box-shadow: 0 50px 80px -30px var(--shadow);
+    padding: 15px 0 15px 15px;
+    display: flex
+}
+#root > aside
+{
+    background-image: url(../images/bg-sidebar-desktop.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 28%;
+    border-radius: 10px;
+    color: var(--color-white);
+    padding: 20px 30px;
+    box-sizing: border-box
+}
+#root > aside > ul
+{
+    margin: 0;
+    text-transform: uppercase;
+    list-style-type: none;
+    padding: 0;
+    counter-reset: bullet;
+    display: flex;
+    flex-direction: column;
+    gap: 45px
+}
+#root > section
+{
+    width: 48%;
+    height: 90%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    padding: 50px 102px 0
+}
+#root > section > header
+{
+    display: flex;
+    flex-direction: column;
+    gap: 10px
+}
+#root > section h1
+{
+    font-size: 2.6rem
+}
+#root > section p
+{
+    color: var(--text-secondary)
+}
+#root > section > span
+{
+    position: absolute;
+    bottom: 15px;
+    color: var(--text-secondary);
+    font-weight: 700
+}
+#root > section > button
+{
+    align-self: flex-end;
+    position: absolute;
+    bottom: 0;
+    background-color: var(--color);
+    color: var(--color-white);
+    border: none;
+    border-radius: 10px;
+    padding: 15px 25px;
+    font-family: inherit;
+    letter-spacing: .08rem
+}
+#root > section > :is(span, button)
+{
+    font-size: 1.7rem
+}
+#root #personal-form
+{
+    display: flex;
+    flex-direction: column;
+    gap: 30px
+}
+#root #personal-form > div
+{
+    display: flex;
+    flex-direction: column;
+    gap: 10px
+}
+#root #personal-form label
+{
+    display: flex;
+    justify-content: space-between
+}
+#root #personal-form label::before
+{
+    content: attr(data-label)
+}
+#root #personal-form label::after
+{
+    content: attr(data-invalid);
+    color: var(--color-danger);
+    font-weight: 700
+}
+#root #personal-form input
+{
+    border: 1px solid var(--text-secondary);
+    background-color: transparent;
+    border-radius: 10px;
+    padding: 15px;
+    font-family: inherit;
+    font-size: 1.4rem;
+    letter-spacing: .08rem;
+    color: var(--color)
+}
+#root #personal-form input:focus
+{
+    outline: 1px solid var(--color)
+}
+#root #personal-form input.invalid
+{
+    outline: 1px solid var(--color-danger)
+}
+
+aside li
+{
+    counter-increment: bullet;
+    display: grid;
+    grid-template-areas: 'counter step' 'counter text';
+    grid-template-columns: 36px 1fr;
+    grid-gap: 5px 15px
+}
+aside li::before
+{
+    content: counter(bullet);
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    grid-area: counter;
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+aside li:not(.active)::before
+{
+    border: 1px solid var(--color-white)
+}
+aside li > :first-child
+{
+    grid-area: step;
+    font-size: 1.4rem
+}
+aside li > :last-child
+{
+    grid-area: text;
+    font-weight: 700
+}
+
+#plan-form
+{
+    display: flex;
+    flex-direction: column;
+    gap: 50px
+}
+#plan-form #plan-period-option
+{
+    background-color: hsl(229, 24%, 87%, .2);
+    padding: 25px 0;
+    display: flex;
+    justify-content: center;
+    border-radius: 10px
+}
+
+#plan-details
+{
+    display: flex;
+    height: 200px;
+    gap: 20px
+}
+#plan-details > div
+{
+    border: 1px solid var(--text-secondary);
+    flex-grow: 1;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between
+}
+#plan-details > div > div
+{
+    display: flex;
+    flex-direction: column
+}
+#plan-details > div span:first-of-type
+{
+    font-size: 2rem;
+    font-weight: 700
+}
+#plan-details > div span:last-of-type
+{
+    color: var(--text-secondary);
+    font-size: 1.7rem
+}
+#plan-details img
+{
+    width: 50px
+}
+
+@media screen and (min-width: 1440px)
+{
+    #root :is(section > :is(span, button), #personal-form input:hover)
+    {
+        cursor: pointer
+    }
+    #root #personal-form input:hover
+    {
+        outline: 1px solid var(--color)
+    }
+}
+
+.attribution
+{
+    font-size: 1.1rem
+}
+.attribution a
+{
+    color: hsl(228, 45%, 44%)
+}
+
+::placeholder
+{
+    font-weight: 700
+}
