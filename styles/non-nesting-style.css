@@ -32,7 +32,7 @@ body
     width: 28%;
     border-radius: 10px;
     color: var(--color-white);
-    padding: 20px 30px;
+    padding: 40px 40px 0;
     box-sizing: border-box
 }
 #root > aside > ul
@@ -44,7 +44,7 @@ body
     counter-reset: bullet;
     display: flex;
     flex-direction: column;
-    gap: 45px
+    gap: 40px
 }
 #root > section
 {
