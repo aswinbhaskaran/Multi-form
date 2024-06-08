@@ -16,6 +16,7 @@ body
 #root
 {
     background-color: var(--color-white);
+    width: 100rem;
     height: 60rem;
     border-radius: 15px;
     box-shadow: 0 50px 80px -30px var(--shadow);

@@ -1,17 +1,18 @@
-function Li({key, cur, s1, s2})
+function Li({els, cur})
 {
-    if(key == cur)
-        return <li className="active">
-            <span>{s1}</span>
+    return els.map(el => {
+        if(el.id == cur)
+            return <li key={`li-${el.id}`} className="active">
+                <span key={`span-${el.id}`}>{el.s1}</span>
 
-            <span>{s2}</span>
-        </li>
-    else
-        return <li>
-            <span>{s1}</span>
+                <span key={`span-${el.id + 1}`}>{el.s2}</span>
+            </li>
+        
+        return <li key={`li-${el.id}`}>
+            <span key={`span-${el.id}`}>{el.s1}</span>
 
-            <span>{s2}</span>
-        </li>
+            <span key={`span-${el.id + 1}`}>{el.s2}</span>
+        </li>})
 }
 
 export default Li
