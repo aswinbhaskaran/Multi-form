@@ -12,10 +12,22 @@ function App()
 {
 	const [elementID, setElementID] = useState(1)
 
+	function prevPage(e)
+	{
+		console.info(e.target.parentElement.children[1].id)
+		setElementID(elementID - 1)
+	}
+	
+	function nextPage(e)
+	{
+		console.info(e.target.parentElement.children[1].id)
+		setElementID(elementID + 1)
+	}
+
 	return (<>
 			<Aside cur={elementID} els={els}/>
 			
-			<Section els={els} id={elementID} prev={() => setElementID(elementID - 1)} next={() => setElementID(elementID + 1)}/>
+			<Section els={els} id={elementID} prev={prevPage} next={nextPage}/>
 		</>)
 }
 

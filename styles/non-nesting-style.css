@@ -236,6 +236,10 @@ aside li > :last-child
     {
         outline: 1px solid var(--color)
     }
+    #root > section > span:hover
+    {
+        color: var(--color)
+    }
 }
 
 .attribution

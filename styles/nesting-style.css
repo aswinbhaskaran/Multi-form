@@ -84,7 +84,12 @@ body
 
 			@media screen and (width >= 1440px)
 			{
-				cursor: pointer
+				cursor: pointer;
+
+				&:hover
+				{
+					color: var(--color)
+				}
 			}
 		}
 
