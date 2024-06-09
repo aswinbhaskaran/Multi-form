@@ -183,7 +183,7 @@ aside li > :last-child
 }
 #plan-form > #plan-period-option
 {
-    background-color: hwb(229 84% 10% / 0.2);
+    background-color: hsl(229, 24%, 87%, .2);
     padding: 25px 0;
     display: flex;
     justify-content: center;
