@@ -181,13 +181,39 @@ aside li > :last-child
     flex-direction: column;
     gap: 50px
 }
-#plan-form #plan-period-option
+#plan-form > #plan-period-option
 {
-    background-color: hsl(229, 24%, 87%, .2);
+    background-color: hwb(229 84% 10% / 0.2);
     padding: 25px 0;
     display: flex;
     justify-content: center;
+    align-items: center;
+    gap: 25px;
     border-radius: 10px
+}
+#plan-form > #plan-period-option > input
+{
+    appearance: none;
+    width: 50px;
+    aspect-ratio: 1 / .5;
+    background-color: var(--color);
+    border-radius: 20px;
+    padding: 5px;
+    display: flex
+}
+#plan-form > #plan-period-option > input::before
+{
+    content: '';
+    width: 17px;
+    aspect-ratio: 1 / 1;
+    background-color: var(--color-white);
+    border-radius: 50%;
+    translate: 0;
+    transition: translate .5s
+}
+#plan-form > #plan-period-option > input:checked::before
+{
+    translate: 22px
 }
 
 #plan-details
