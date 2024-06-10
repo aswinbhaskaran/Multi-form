@@ -12,19 +12,6 @@ function Personal({h1, p, id, next})
 		}
 	}
 
-	function focusOut(e)
-	{
-		const el = e.target
-
-		if(el.type == 'email')
-			if(!el.validity.valid)
-			{
-				el.classList.add('invalid')
-
-				el.parentElement.children[0].dataset.invalid = 'This field is required'
-			}
-	}
-
 	return (<>
 			<header>
 				<h1>{h1}</h1>
@@ -42,7 +29,7 @@ function Personal({h1, p, id, next})
 				<div>
 					<label htmlFor="email" data-label="Email Address"></label>
 
-					<input type="email" placeholder="e.g. stephenking@lorem.com" id="email" onFocus={focusIn} onBlur={focusOut}/>
+					<input type="email" placeholder="e.g. stephenking@lorem.com" id="email" onFocus={focusIn}/>
 				</div>
 
 				<div>
