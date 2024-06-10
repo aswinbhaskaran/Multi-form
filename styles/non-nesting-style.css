@@ -213,7 +213,7 @@ aside li > :last-child
 }
 #plan-form > #plan-period-option > input:checked::before
 {
-    translate: 22px
+    translate: 23px
 }
 
 #plan-details
