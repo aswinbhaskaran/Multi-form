@@ -7,14 +7,15 @@
 	border: none
 }
 
+.plan-active
+{
+	border: 1px solid var(--color);
+	background-color: var(--plan-bg)
+}
+
 .d-none
 {
 	display: none
-}
-
-.d-flex
-{
-	display: flex
 }
 
 :root
@@ -24,7 +25,8 @@
 	--shadow: rgb(0, 0, 0, 0.15);
 	--color: hsl(213, 96%, 18%);
 	--text-secondary: hsl(231, 11%, 63%);
-	--color-danger: hsl(354, 84%, 57%)
+	--color-danger: hsl(354, 84%, 57%);
+	--plan-bg: hsl(229, 24%, 87%, .2)
 }
 
 html

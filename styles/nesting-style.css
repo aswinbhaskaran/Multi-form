@@ -228,13 +228,14 @@ aside li
 
 	#plan-period-option
 	{
-		background-color: hsl(229, 24%, 87%, .2);
+		background-color: var(--plan-bg);
 		padding: 25px 0;
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		gap: 25px;
 		border-radius: 10px;
+		font-weight: 700;
 
 		& > input
 		{
@@ -245,6 +246,14 @@ aside li
 			border-radius: 20px;
 			padding: 5px;
 			display: flex;
+
+			@media screen and (width >= 1440px)
+			{
+				&:hover
+				{
+					cursor: pointer
+				}
+			}
 
 			&::before
 			{
@@ -257,9 +266,34 @@ aside li
 				transition: translate .5s
 			}
 
-			&:checked::before
+			span:has(+ &)
 			{
-				translate: 23px
+				color: var(--color);
+				transition: color .5s
+			}
+
+			& + span
+			{
+				color: var(--text-secondary);
+				transition: color .5s
+			}
+
+			&:checked
+			{
+				&::before
+				{
+					translate: 23px
+				}
+
+				span:has(+ &)
+				{
+					color: var(--text-secondary)
+				}
+
+				& + span
+				{
+					color: var(--color)
+				}
 			}
 		}
 	}
@@ -268,38 +302,55 @@ aside li
 #plan-details
 {
 	display: flex;
-	height: 200px;
 	gap: 20px;
 
 	& > div
 	{
-		border: 1px solid var(--text-secondary);
 		flex-grow: 1;
 		border-radius: 10px;
 		padding: 20px;
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
+		gap: 40px;
+
+		&:not(.plan-active)
+		{
+			border: 1px solid var(--text-secondary)
+		}
+
+		@media screen and (width >= 1440px)
+		{
+			&:hover
+			{
+				border: 1px solid var(--color);
+				cursor: pointer
+			}
+		}
 
 		& > div
 		{
 			display: flex;
-			flex-direction: column
+			flex-direction: column;
+			gap: 10px
 		}
 
-		& span
+		& span:first-of-type
 		{
-			&:first-of-type
-			{
-				font-size: 2rem;
-				font-weight: 700
-			}
+			font-size: 2rem;
+			font-weight: 700
+		}
 
-			&:last-of-type
-			{
-				color: var(--text-secondary);
-				font-size: 1.7rem
-			}
+		.plan-amt
+		{
+			color: var(--text-secondary);
+			font-size: 1.7rem
+		}
+
+		.free-info
+		{
+			font-size: 1.64rem;
+			letter-spacing: 0
 		}
 	}
 
