@@ -8,7 +8,7 @@ const els = [{id: 1, h1: 'Personal info', p: 'Please provide your name, email ad
 
 function App()
 {
-	const [elementID, setElementID] = useState(2)
+	const [elementID, setElementID] = useState(1)
 	
 	function nextPage(e)
 	{
@@ -22,9 +22,9 @@ function App()
 			{
 				if(em.value != '')
 				{
-					if(em.type == 'email')
+					if(em.id == 'email')
 					{
-						if(!em.validity.valid)
+						if(!em.value.match(/^[a-zA-Z\d_\.\+\-]+@[a-zA-Z\d-]+\.[a-zA-Z\d-\.]+$/g))
 						{
 							em.classList.add('invalid')
 
@@ -34,24 +34,21 @@ function App()
 							if(!emValid)
 								emValid = !emValid
 					}
-					else
+					else if(em.id == 'ph')
 					{
-						if(em.id == 'ph')
+						if(!em.value.match(/[\d\s\+]{10,15}/g))
 						{
-							if(!em.value.match(/[\d\s\+]{10,15}/g))
-							{
-								em.classList.add('invalid')
+							em.classList.add('invalid')
 
-								em.parentElement.children[0].dataset.invalid = 'Phone number invalid'
-							}
-							else
-								if(!phValid)
-									phValid = !phValid
+							em.parentElement.children[0].dataset.invalid = 'Phone number invalid'
 						}
 						else
-							if(!nameValid)
-								nameValid = !nameValid
+							if(!phValid)
+								phValid = !phValid
 					}
+					else
+						if(!nameValid)
+							nameValid = !nameValid
 				}
 				else
 				{

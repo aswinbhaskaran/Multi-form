@@ -29,7 +29,7 @@ function Personal({h1, p, id, next})
 				<div>
 					<label htmlFor="email" data-label="Email Address"></label>
 
-					<input type="email" placeholder="e.g. stephenking@lorem.com" id="email" onFocus={focusIn}/>
+					<input type="text" placeholder="e.g. stephenking@lorem.com" id="email" onFocus={focusIn}/>
 				</div>
 
 				<div>
