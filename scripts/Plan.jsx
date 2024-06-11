@@ -19,7 +19,9 @@ function Plan({h1, p, id, prev, next})
 
 	function planChange()
 	{
-		const check = document.querySelector('#plan-period-option > input')
+		const plan = document.getElementById('plan-period-option')
+		const check = plan.querySelector('input')
+		const span = plan.children[0]
 		const ps = document.querySelectorAll('.plan-amt')
 		const fs = document.querySelectorAll('.free-info')
 
@@ -31,6 +33,9 @@ function Plan({h1, p, id, prev, next})
 			for(const f of fs)
 				if(f.classList.contains('d-none'))
 					f.classList.remove('d-none')
+
+			if(!span.hasAttribute('style'))
+				span.style.color = 'var(--text-secondary)'
 		}
 		else
 		{
@@ -40,6 +45,9 @@ function Plan({h1, p, id, prev, next})
 			for(const f of fs)
 				if(!f.classList.contains('d-none'))
 					f.classList.add('d-none')
+
+			if(span.hasAttribute('style'))
+				span.removeAttribute('style')
 		}
 	}
 

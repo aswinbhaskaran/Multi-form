@@ -237,6 +237,12 @@ aside li
 		border-radius: 10px;
 		font-weight: 700;
 
+		& > span:first-of-type
+		{
+			color: var(--span-color);
+			transition: color .5s
+		}
+
 		& > input
 		{
 			appearance: none;
@@ -266,12 +272,6 @@ aside li
 				transition: translate .5s
 			}
 
-			span:has(+ &)
-			{
-				color: var(--color);
-				transition: color .5s
-			}
-
 			& + span
 			{
 				color: var(--text-secondary);
@@ -283,11 +283,6 @@ aside li
 				&::before
 				{
 					translate: 23px
-				}
-
-				span:has(+ &)
-				{
-					color: var(--text-secondary)
 				}
 
 				& + span
