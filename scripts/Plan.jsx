@@ -1,14 +1,5 @@
 function Plan({h1, p, id, prev, next})
 {
-	const [ps, fs] = [document.querySelectorAll('.plan-amt'), document.querySelectorAll('.free-info')]
-
-	for(const p of ps)
-		p.innerText = p.dataset.month
-
-	for(const f of fs)
-		if(!f.classList.contains('d-none'))
-			f.classList.add('d-none')
-
 	function activeEnable(e)
 	{
 		let el = e.target;
@@ -29,6 +20,8 @@ function Plan({h1, p, id, prev, next})
 	function planChange()
 	{
 		const check = document.querySelector('#plan-period-option > input')
+		const ps = document.querySelectorAll('.plan-amt')
+		const fs = document.querySelectorAll('.free-info')
 
 		if(check.checked)
 		{
@@ -65,7 +58,7 @@ function Plan({h1, p, id, prev, next})
 						<div>
 							<span>Arcade</span>
 
-							<span className='plan-amt' data-month='$9/mo' data-year='$90/yr'></span>
+							<span className='plan-amt' data-month='$9/mo' data-year='$90/yr'>$9/mo</span>
 
 							<span className='free-info d-none'>2 months free</span>
 						</div>
@@ -77,7 +70,7 @@ function Plan({h1, p, id, prev, next})
 						<div>
 							<span>Advanced</span>
 
-							<span className='plan-amt' data-month='$12/mo' data-year='$120/yr'></span>
+							<span className='plan-amt' data-month='$12/mo' data-year='$120/yr'>$12/mo</span>
 
 							<span className='free-info d-none'>2 months free</span>
 						</div>
@@ -89,7 +82,7 @@ function Plan({h1, p, id, prev, next})
 						<div>
 							<span>Pro</span>
 
-							<span className='plan-amt' data-month='$15/mo' data-year='$150/yr'></span>
+							<span className='plan-amt' data-month='$15/mo' data-year='$150/yr'>$15/mo</span>
 
 							<span className='free-info d-none'>2 months free</span>
 						</div>
