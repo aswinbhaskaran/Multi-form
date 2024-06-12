@@ -190,13 +190,16 @@ aside li > :last-child
 }
 #plan-details > div
 {
-    border: 1px solid var(--text-secondary);
     flex-grow: 1;
     border-radius: 10px;
     padding: 20px;
     display: flex;
     flex-direction: column;
     justify-content: space-between
+}
+#plan-details > div:not(.plan-active)
+{
+    border: 1px solid var(--text-secondary)
 }
 #plan-details > div > div
 {
@@ -270,7 +273,7 @@ aside li > :last-child
 
 @media screen and (min-width: 1440px)
 {
-    #root :is(section > :is(span, button), #personal-form input:hover)
+    :is(#root > section > :is(span, button), #personal-form input:hover, #plan-details > div:hover, #plan-period-option > input:hover)
     {
         cursor: pointer
     }
@@ -281,6 +284,11 @@ aside li > :last-child
     #root > section > span:hover
     {
         color: var(--color)
+    }
+
+    #plan-details > div:hover
+    {
+        border: 1px solid var(--color)
     }
 }
 
