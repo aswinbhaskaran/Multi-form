@@ -1,5 +1,7 @@
 import Personal from './Personal';
 import Plan from './Plan';
+import Add from './Add';
+
 
 function Section({els, id, prev, next})
 {
@@ -11,6 +13,8 @@ function Section({els, id, prev, next})
 						return <Personal key={id} h1={el.h1} p={el.p} id={el.eID} next={next}/>
 					else if (id == 2)
 						return <Plan key={id} h1={el.h1} p={el.p} id={el.eID} prev={prev} next={next}/>
+					else if(id == 3)
+						return <Add key={id} h1={el.h1} p={el.p} id={el.eID} prev={prev} next={next}/>
 				}
 			})}
 		</section>)

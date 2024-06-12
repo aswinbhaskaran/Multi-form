@@ -72,7 +72,9 @@ body
 
 		& p
 		{
-			color: var(--text-secondary)
+			color: var(--text-secondary);
+			letter-spacing: .08rem;
+			font-size: 1.7rem
 		}
 
 		& > span
@@ -217,7 +219,8 @@ aside li
 	& > :first-child
 	{
 		grid-area: step;
-		font-size: 1.4rem
+		font-size: 1.4rem;
+		opacity: 60%
 	}
 
 	& > :last-child
@@ -349,6 +352,98 @@ aside li
 			& + span
 			{
 				color: var(--color)
+			}
+		}
+	}
+}
+
+#add-on-form
+{
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+
+	& > div
+	{
+		border: 1px solid var(--text-secondary);
+		border-radius: 10px;
+		padding: 20px 20px 20px 0;
+		display: grid;
+		grid-template-areas: 'check details cost';
+		grid-template-columns: 2fr 7fr 1fr;
+		align-items: center;
+		letter-spacing: .08rem;
+		font-size: 1.7rem;
+
+		& > input
+		{
+			appearance: none;
+			display: flex;
+			justify-self: center;
+
+			&::before
+			{
+				content: '';
+				display: block;
+				width: 22px;
+				aspect-ratio: 1 / 1;
+				border-radius: 5px
+			}
+
+			&:not(:checked)::before
+			{
+				border: 1px solid var(--text-secondary)
+			}
+
+			&:checked::before
+			{
+				content: url(../images/icon-checkmark.svg);
+				background-color: var(--add-on-color);
+				display: flex;
+				justify-content: center;
+				align-items: center
+			}
+
+			@media screen and (width >= 1440px)
+			{
+				&:hover
+				{
+					cursor: pointer
+				}
+			}
+		}
+
+		& > div
+		{
+			display: flex;
+			flex-direction: column;
+			gap: 5px;
+			grid-area: details
+		}
+
+		.head
+		{
+			font-weight: 700;
+			font-size: 1.9rem
+		}
+
+		.desc
+		{
+			color: var(--text-secondary)
+		}
+
+		& > span
+		{
+			color: var(--add-on-color);
+			grid-area: cost
+		}
+
+		@media screen and (width >= 1440px)
+		{
+			&:hover
+			{
+				cursor: pointer;
+				border: 1px solid var(--color)
 			}
 		}
 	}

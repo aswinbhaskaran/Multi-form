@@ -108,9 +108,7 @@ function Plan({h1, p, id, prev, next})
 
 			<span onClick={prev}>Go Back</span>
 
-			{/* <button type="button" onClick={next}>
-				Next Step
-			</button> */}
+			<button type="button" onClick={next}>Next Step</button>
 		</>)
 }
 
