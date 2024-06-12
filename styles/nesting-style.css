@@ -180,6 +180,13 @@ body
 			}
 		}
 	}
+
+	#plan-form
+	{
+		display: flex;
+		flex-direction: column;
+		gap: 50px;
+	}
 }
 
 aside li
@@ -217,80 +224,6 @@ aside li
 	{
 		grid-area: text;
 		font-weight: 700
-	}
-}
-
-#plan-form
-{
-	display: flex;
-	flex-direction: column;
-	gap: 50px;
-
-	#plan-period-option
-	{
-		background-color: var(--plan-bg);
-		padding: 25px 0;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		gap: 25px;
-		border-radius: 10px;
-		font-weight: 700;
-
-		& > span:first-of-type
-		{
-			color: var(--span-color);
-			transition: color .5s
-		}
-
-		& > input
-		{
-			appearance: none;
-			background-color: var(--color);
-			width: 50px;
-			aspect-ratio: 1 / .5;
-			border-radius: 20px;
-			padding: 5px;
-			display: flex;
-
-			@media screen and (width >= 1440px)
-			{
-				&:hover
-				{
-					cursor: pointer
-				}
-			}
-
-			&::before
-			{
-				content: '';
-				background-color: var(--color-white);
-				width: 17px;
-				aspect-ratio: 1 / 1;
-				border-radius: 50%;
-				translate: 0;
-				transition: translate .5s
-			}
-
-			& + span
-			{
-				color: var(--text-secondary);
-				transition: color .5s
-			}
-
-			&:checked
-			{
-				&::before
-				{
-					translate: 23px
-				}
-
-				& + span
-				{
-					color: var(--color)
-				}
-			}
-		}
 	}
 }
 
@@ -344,7 +277,6 @@ aside li
 
 		.free-info
 		{
-			font-size: 1.64rem;
 			letter-spacing: 0
 		}
 	}
@@ -352,6 +284,73 @@ aside li
 	& img 
 	{
 		width: 50px
+	}
+}
+
+#plan-period-option
+{
+	background-color: var(--plan-bg);
+	padding: 25px 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 25px;
+	border-radius: 10px;
+	font-weight: 700;
+
+	& > span:first-of-type
+	{
+		color: var(--span-color);
+		transition: color .5s
+	}
+
+	& > input
+	{
+		appearance: none;
+		background-color: var(--color);
+		width: 50px;
+		aspect-ratio: 1 / .5;
+		border-radius: 20px;
+		padding: 5px;
+		display: flex;
+
+		@media screen and (width >= 1440px)
+		{
+			&:hover
+			{
+				cursor: pointer
+			}
+		}
+
+		&::before
+		{
+			content: '';
+			background-color: var(--color-white);
+			width: 17px;
+			aspect-ratio: 1 / 1;
+			border-radius: 50%;
+			translate: 0;
+			transition: translate .5s
+		}
+
+		& + span
+		{
+			color: var(--text-secondary);
+			transition: color .5s
+		}
+
+		&:checked
+		{
+			&::before
+			{
+				translate: 23px
+			}
+
+			& + span
+			{
+				color: var(--color)
+			}
+		}
 	}
 }
 

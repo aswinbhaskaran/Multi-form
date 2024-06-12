@@ -141,6 +141,13 @@ body
     outline: 1px solid var(--color-danger)
 }
 
+#root #plan-form
+{
+    display: flex;
+    flex-direction: column;
+    gap: 50px
+}
+
 aside li
 {
     counter-increment: bullet;
@@ -175,47 +182,6 @@ aside li > :last-child
     font-weight: 700
 }
 
-#plan-form
-{
-    display: flex;
-    flex-direction: column;
-    gap: 50px
-}
-#plan-form > #plan-period-option
-{
-    background-color: hsl(229, 24%, 87%, .2);
-    padding: 25px 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 25px;
-    border-radius: 10px
-}
-#plan-form > #plan-period-option > input
-{
-    appearance: none;
-    width: 50px;
-    aspect-ratio: 1 / .5;
-    background-color: var(--color);
-    border-radius: 20px;
-    padding: 5px;
-    display: flex
-}
-#plan-form > #plan-period-option > input::before
-{
-    content: '';
-    width: 17px;
-    aspect-ratio: 1 / 1;
-    background-color: var(--color-white);
-    border-radius: 50%;
-    translate: 0;
-    transition: translate .5s
-}
-#plan-form > #plan-period-option > input:checked::before
-{
-    translate: 23px
-}
-
 #plan-details
 {
     display: flex;
@@ -235,21 +201,71 @@ aside li > :last-child
 #plan-details > div > div
 {
     display: flex;
-    flex-direction: column
+    flex-direction: column;
+    gap: 10px
 }
 #plan-details > div span:first-of-type
 {
     font-size: 2rem;
     font-weight: 700
 }
-#plan-details > div span:last-of-type
+#plan-details > div .plan-amt
 {
     color: var(--text-secondary);
     font-size: 1.7rem
 }
+#plan-details > div .free-info
+{
+    letter-spacing: 0
+}
 #plan-details img
 {
     width: 50px
+}
+
+#plan-period-option
+{
+    background-color: hsl(229, 24%, 87%, .2);
+    padding: 25px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    border-radius: 10px;
+    font-weight: 700
+}
+#plan-period-option > input
+{
+    appearance: none;
+    width: 50px;
+    aspect-ratio: 1 / .5;
+    background-color: var(--color);
+    border-radius: 20px;
+    padding: 5px;
+    display: flex
+}
+#plan-period-option > input::before
+{
+    content: '';
+    width: 17px;
+    aspect-ratio: 1 / 1;
+    background-color: var(--color-white);
+    border-radius: 50%;
+    translate: 0;
+    transition: translate .5s
+}
+#plan-period-option > input + span
+{
+    color: var(--text-secondary);
+    transition: color .5s
+}
+#plan-period-option > input:checked::before
+{
+    translate: 23px
+}
+#plan-period-option > input:checked + span
+{
+    color: var(--color)
 }
 
 @media screen and (min-width: 1440px)
