@@ -365,7 +365,6 @@ aside li
 
 	& > div
 	{
-		border: 1px solid var(--text-secondary);
 		border-radius: 10px;
 		padding: 20px 20px 20px 0;
 		display: grid;
@@ -374,6 +373,11 @@ aside li
 		align-items: center;
 		letter-spacing: .08rem;
 		font-size: 1.7rem;
+
+		&:not(.plan-active)
+		{
+			border: 1px solid var(--text-secondary)
+		}
 
 		& > input
 		{

@@ -1,10 +1,12 @@
-function Plan({h1, p, id, prev, next})
+import { useEffect } from "react";
+
+function Plan({h1, p, id, prev, next, dur, stateChange})
 {
 	function activeEnable(e)
 	{
 		let el = e.target;
 
-		if((el.tagName.toLowerCase() == 'img') || ((el.tagName.toLowerCase() == 'div') && (el.parentElement.id != 'plan-details')))
+		if((el.tagName.toLowerCase() == 'img') || ((el.tagName.toLowerCase() == 'div') && (el.parentElement.id != document.getElementById(id).children[0].id)))
 			el = el.parentElement
 		else if(el.tagName.toLowerCase() == 'span')
 			el = el.parentElement.parentElement
@@ -17,15 +19,16 @@ function Plan({h1, p, id, prev, next})
 			el.classList.add('plan-active')
 	}
 
-	function planChange()
+	function planChange(e)
 	{
-		const plan = document.getElementById('plan-period-option')
-		const check = plan.querySelector('input')
+		const el = e.target
+		
+		const plan = el.parentElement
 		const span = plan.children[0]
 		const ps = document.querySelectorAll('.plan-amt')
 		const fs = document.querySelectorAll('.free-info')
 
-		if(check.checked)
+		if(el.checked)
 		{
 			for(const p of ps)
 				p.innerText = p.dataset.year
@@ -49,7 +52,27 @@ function Plan({h1, p, id, prev, next})
 			if(span.hasAttribute('style'))
 				span.removeAttribute('style')
 		}
+
+		stateChange(e)
 	}
+
+	useEffect(() => {
+		const ps = document.getElementsByClassName('plan-amt')
+		const fs = document.getElementsByClassName('free-info')
+		
+		if(dur == 'month')
+		{
+			for(const s of ps)
+				s.innerText = s.dataset.month
+		}
+		else if(dur == 'year')
+		{
+			for(const s of fs)
+				s.innerText = s.dataset.year
+		}
+
+		document.querySelector('input').checked = (dur == 'year')
+	}, [dur])
 
 	return (<>
 			<header>
@@ -60,13 +83,13 @@ function Plan({h1, p, id, prev, next})
 
 			<div id={id}>
 				<div id="plan-details">
-					<div onClick={activeEnable}>
+					<div className='plan-active' onClick={activeEnable}>
 						<img src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2240%22%20height%3D%2240%22%20viewBox%3D%220%200%2040%2040%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Ccircle%20cx%3D%2220%22%20cy%3D%2220%22%20r%3D%2220%22%20fill%3D%22%23FFAF7E%22%2F%3E%3Cpath%20fill%3D%22%23FFF%22%20fill-rule%3D%22nonzero%22%20d%3D%22M24.995%2018.005h-3.998v5.998h-2v-5.998H15a1%201%200%200%200-1%201V29a1%201%200%200%200%201%201h9.995a1%201%200%200%200%201-1v-9.995a1%201%200%200%200-1-1Zm-5.997%208.996h-2v-1.999h2v2Zm2-11.175a2.999%202.999%200%201%200-2%200v2.18h2v-2.18Z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E" alt="Arcade plan"/>
 
 						<div>
 							<span>Arcade</span>
 
-							<span className='plan-amt' data-month='$9/mo' data-year='$90/yr'>$9/mo</span>
+							<span className='plan-amt' data-month='$9/mo' data-year='$90/yr'></span>
 
 							<span className='free-info d-none'>2 months free</span>
 						</div>
@@ -78,7 +101,7 @@ function Plan({h1, p, id, prev, next})
 						<div>
 							<span>Advanced</span>
 
-							<span className='plan-amt' data-month='$12/mo' data-year='$120/yr'>$12/mo</span>
+							<span className='plan-amt' data-month='$12/mo' data-year='$120/yr'></span>
 
 							<span className='free-info d-none'>2 months free</span>
 						</div>
@@ -90,7 +113,7 @@ function Plan({h1, p, id, prev, next})
 						<div>
 							<span>Pro</span>
 
-							<span className='plan-amt' data-month='$15/mo' data-year='$150/yr'>$15/mo</span>
+							<span className='plan-amt' data-month='$15/mo' data-year='$150/yr'></span>
 
 							<span className='free-info d-none'>2 months free</span>
 						</div>
