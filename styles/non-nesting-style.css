@@ -8,7 +8,7 @@ body
     gap: 30px
 }
 
-:is(body, section :is(h1, p))
+:is(body, section > header > *, #root > aside > ul)
 {
     margin: 0
 }
@@ -32,12 +32,11 @@ body
     width: 28%;
     border-radius: 10px;
     color: var(--color-white);
-    padding: 40px 40px 0;
+    padding: 40px 0 0 40px;
     box-sizing: border-box
 }
 #root > aside > ul
 {
-    margin: 0;
     text-transform: uppercase;
     list-style-type: none;
     padding: 0;
@@ -68,7 +67,9 @@ body
 }
 #root > section p
 {
-    color: var(--text-secondary)
+    color: var(--text-secondary);
+    letter-spacing: .08rem;
+    font-size: 1.7rem
 }
 #root > section > span
 {
@@ -140,7 +141,6 @@ body
 {
     outline: 1px solid var(--color-danger)
 }
-
 #root #plan-form
 {
     display: flex;
@@ -174,7 +174,8 @@ aside li:not(.active)::before
 aside li > :first-child
 {
     grid-area: step;
-    font-size: 1.4rem
+    font-size: 1.4rem;
+    opacity: 60%
 }
 aside li > :last-child
 {
@@ -185,7 +186,6 @@ aside li > :last-child
 #plan-details
 {
     display: flex;
-    height: 200px;
     gap: 20px
 }
 #plan-details > div
@@ -195,7 +195,8 @@ aside li > :last-child
     padding: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between
+    justify-content: space-between;
+    gap: 40px
 }
 #plan-details > div:not(.plan-active)
 {
@@ -226,82 +227,24 @@ aside li > :last-child
     width: 50px
 }
 
-#plan-period-option
+@media screen and (width >= 1440px)
 {
-    background-color: hsl(229, 24%, 87%, .2);
-    padding: 25px 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 25px;
-    border-radius: 10px;
-    font-weight: 700
-}
-#plan-period-option > input
-{
-    appearance: none;
-    width: 50px;
-    aspect-ratio: 1 / .5;
-    background-color: var(--color);
-    border-radius: 20px;
-    padding: 5px;
-    display: flex
-}
-#plan-period-option > input::before
-{
-    content: '';
-    width: 17px;
-    aspect-ratio: 1 / 1;
-    background-color: var(--color-white);
-    border-radius: 50%;
-    translate: 0;
-    transition: translate .5s
-}
-#plan-period-option > input + span
-{
-    color: var(--text-secondary);
-    transition: color .5s
-}
-#plan-period-option > input:checked::before
-{
-    translate: 23px
-}
-#plan-period-option > input:checked + span
-{
-    color: var(--color)
-}
-
-@media screen and (min-width: 1440px)
-{
-    :is(#root > section > :is(span, button), #personal-form input:hover, #plan-details > div:hover, #plan-period-option > input:hover)
-    {
-        cursor: pointer
-    }
-    #root #personal-form input:hover
-    {
-        outline: 1px solid var(--color)
-    }
     #root > section > span:hover
     {
         color: var(--color)
+    }
+    #root #personal-form input
+    {
+        outline: 1px solid var(--color)
     }
 
     #plan-details > div:hover
     {
         border: 1px solid var(--color)
     }
-}
 
-.attribution
-{
-    font-size: 1.1rem
-}
-.attribution a
-{
-    color: hsl(228, 45%, 44%)
-}
-
-::placeholder
-{
-    font-weight: 700
+    :is(#root > section > :is(span:hover, button:hover), #personal-form input, #plan-details > div:hover)
+    {
+        cursor: pointer
+    }
 }
