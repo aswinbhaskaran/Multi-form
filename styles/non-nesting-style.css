@@ -227,6 +227,124 @@ aside li > :last-child
     width: 50px
 }
 
+#plan-period-option
+{
+    background-color: var(--plan-bg);
+    padding: 25px 0;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    border-radius: 10px;
+    font-weight: 700
+}
+#plan-period-option > span:first-of-type
+{
+    color: var(--span-color);
+    transition: color .5s
+}
+#plan-period-option > input
+{
+    appearance: none;
+    background-color: var(--color);
+    width: 50px;
+    aspect-ratio: 1 / .5;
+    border-radius: 20px;
+    padding: 5px;
+    display: flex
+}
+#plan-period-option > input::before
+{
+    content: '';
+    background-color: var(--color-white);
+    width: 17px;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    translate: 0;
+    transition: translate .5s
+}
+#plan-period-option > input + span
+{
+    color: var(--text-secondary);
+    transition: color .5s
+}
+#plan-period-option > input:checked::before
+{
+    translate: 23px
+}
+#plan-period-option > input:checked + span
+{
+    color: var(--color)
+}
+
+#add-on-form
+{
+    display: flex;
+    flex-direction: column;
+    gap: 20px
+}
+#add-on-form > div
+{
+    border-radius: 10px;
+    padding: 20px 20px 20px 0;
+    display: grid;
+    grid-template-areas: 'check details cost';
+    grid-template-columns: 2fr 7fr 1fr;
+    align-items: center;
+    letter-spacing: .08rem;
+    font-size: 1.7rem
+}
+#add-on-form > div:not(.plan-active)
+{
+    border: 1px solid var(--text-secondary)
+}
+#add-on-form > div > input
+{
+    appearance: none;
+    display: flex;
+    justify-content: center
+}
+#add-on-form > div > input::before
+{
+    content: '';
+    display: block;
+    width: 22px;
+    aspect-ratio: 1 / 1;
+    border-radius: 5px
+}
+#add-on-form > div > input:not(:checked)::before
+{
+    border: 1px solid var(--text-secondary)
+}
+#add-on-form > div > input:checked::before
+{
+    content: url(../images/icon-checkmark.svg);
+    background-color: var(--add-on-color);
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+#add-on-form > div > div
+{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    grid-area: details
+}
+#add-on-form > div .head
+{
+    font-weight: 700;
+    font-size: 1.9rem
+}
+#add-on-form > div .desc
+{
+    color: var(--text-secondary)
+}
+#add-on-form > div > span
+{
+    color: var(--add-on-color);
+    grid-area: cost
+}
+
 @media screen and (width >= 1440px)
 {
     #root > section > span:hover
@@ -238,13 +356,29 @@ aside li > :last-child
         outline: 1px solid var(--color)
     }
 
-    #plan-details > div:hover
+    :is(#plan-details > div:hover, #add-on-form > div > span:hover)
     {
         border: 1px solid var(--color)
     }
 
-    :is(#root > section > :is(span:hover, button:hover), #personal-form input, #plan-details > div:hover)
+    :is(#root > section > :is(span:hover, button:hover), #personal-form input, #plan-details > div:hover, #plan-period-option > input:hover, #add-on-form > div > :is(input:hover, span:hover))
     {
         cursor: pointer
     }
+}
+
+.attribution
+{
+    font-size: 1.1rem;
+    text-align: center
+}
+.attribution a
+{
+    color: hsl(228, 45%, 44%)
+}
+
+::placeholder
+{
+    font-weight: 700;
+    font-size: 1.4rem
 }
