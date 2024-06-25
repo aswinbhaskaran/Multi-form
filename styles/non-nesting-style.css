@@ -1,360 +1,357 @@
-body
-{
-    background-color: var(--bg);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 30px
-}
-
-:is(body, section > header > *, #root > aside > ul)
-{
-    margin: 0
-}
-
-#root
-{
-    background-color: var(--color-white);
-    width: 100rem;
-    height: 60rem;
-    border-radius: 15px;
-    box-shadow: 0 50px 80px -30px var(--shadow);
-    padding: 15px 0 15px 15px;
-    display: flex
-}
-#root > aside
-{
-    background-image: url(../images/bg-sidebar-desktop.svg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 28%;
-    border-radius: 10px;
-    color: var(--color-white);
-    padding: 40px 0 0 40px;
-    box-sizing: border-box
-}
-#root > aside > ul
-{
-    text-transform: uppercase;
-    list-style-type: none;
-    padding: 0;
-    counter-reset: bullet;
-    display: flex;
-    flex-direction: column;
-    gap: 40px
-}
-#root > section
-{
-    width: 48%;
-    height: 90%;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
-    padding: 50px 102px 0
-}
-#root > section > header
-{
-    display: flex;
-    flex-direction: column;
-    gap: 10px
-}
-#root > section h1
-{
-    font-size: 2.6rem
-}
-#root > section p
-{
-    color: var(--text-secondary);
-    letter-spacing: .08rem;
-    font-size: 1.7rem
-}
-#root > section > span
-{
-    position: absolute;
-    bottom: 15px;
-    color: var(--text-secondary);
-    font-weight: 700
-}
-#root > section > button
-{
-    align-self: flex-end;
-    position: absolute;
-    bottom: 0;
-    background-color: var(--color);
-    color: var(--color-white);
-    border: none;
-    border-radius: 10px;
-    padding: 15px 25px;
-    font-family: inherit;
-    letter-spacing: .08rem
-}
-#root > section > :is(span, button)
-{
-    font-size: 1.7rem
-}
-#root #personal-form
-{
-    display: flex;
-    flex-direction: column;
-    gap: 30px
-}
-#root #personal-form > div
-{
-    display: flex;
-    flex-direction: column;
-    gap: 10px
-}
-#root #personal-form label
-{
-    display: flex;
-    justify-content: space-between
-}
-#root #personal-form label::before
-{
-    content: attr(data-label)
-}
-#root #personal-form label::after
-{
-    content: attr(data-invalid);
-    color: var(--color-danger);
-    font-weight: 700
-}
-#root #personal-form input
-{
-    border: 1px solid var(--text-secondary);
-    background-color: transparent;
-    border-radius: 10px;
-    padding: 15px;
-    font-family: inherit;
-    font-size: 1.4rem;
-    letter-spacing: .08rem;
-    color: var(--color)
-}
-#root #personal-form input:focus
-{
-    outline: 1px solid var(--color)
-}
-#root #personal-form input.invalid
-{
-    outline: 1px solid var(--color-danger)
-}
-#root #plan-form
-{
-    display: flex;
-    flex-direction: column;
-    gap: 50px
-}
-
-aside li
-{
-    counter-increment: bullet;
-    display: grid;
-    grid-template-areas: 'counter step' 'counter text';
-    grid-template-columns: 36px 1fr;
-    grid-gap: 5px 15px
-}
-aside li::before
-{
-    content: counter(bullet);
-    aspect-ratio: 1 / 1;
-    border-radius: 50%;
-    grid-area: counter;
-    align-self: center;
-    display: flex;
-    justify-content: center;
-    align-items: center
-}
-aside li:not(.active)::before
-{
-    border: 1px solid var(--color-white)
-}
-aside li > :first-child
-{
-    grid-area: step;
-    font-size: 1.4rem;
-    opacity: 60%
-}
-aside li > :last-child
-{
-    grid-area: text;
-    font-weight: 700
-}
-
-#plan-details
-{
-    display: flex;
-    gap: 20px
-}
-#plan-details > div
-{
-    flex-grow: 1;
-    border-radius: 10px;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 40px
-}
-#plan-details > div:not(.plan-active)
-{
-    border: 1px solid var(--text-secondary)
-}
-#plan-details > div > div
-{
-    display: flex;
-    flex-direction: column;
-    gap: 10px
-}
-#plan-details > div span:first-of-type
-{
-    font-size: 2rem;
-    font-weight: 700
-}
-#plan-details > div .plan-amt
-{
-    color: var(--text-secondary);
-    font-size: 1.7rem
-}
-#plan-details > div .free-info
-{
-    letter-spacing: 0
-}
-#plan-details img
-{
-    width: 50px
-}
-
-#plan-period-option
-{
-    background-color: var(--plan-bg);
-    padding: 25px 0;
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    border-radius: 10px;
-    font-weight: 700
-}
-#plan-period-option > span:first-of-type
-{
-    color: var(--span-color);
-    transition: color .5s
-}
-#plan-period-option > input
-{
-    appearance: none;
-    background-color: var(--color);
-    width: 50px;
-    aspect-ratio: 1 / .5;
-    border-radius: 20px;
-    padding: 5px;
-    display: flex
-}
-#plan-period-option > input::before
-{
-    content: '';
-    background-color: var(--color-white);
-    width: 17px;
-    aspect-ratio: 1 / 1;
-    border-radius: 50%;
-    translate: 0;
-    transition: translate .5s
-}
-#plan-period-option > input + span
-{
-    color: var(--text-secondary);
-    transition: color .5s
-}
-#plan-period-option > input:checked::before
-{
-    translate: 23px
-}
-#plan-period-option > input:checked + span
-{
-    color: var(--color)
-}
-
-#add-on-form
-{
-    display: flex;
-    flex-direction: column;
-    gap: 20px
-}
-#add-on-form > div
-{
-    border-radius: 10px;
-    padding: 20px 20px 20px 0;
-    display: grid;
-    grid-template-areas: 'check details cost';
-    grid-template-columns: 2fr 7fr 1fr;
-    align-items: center;
-    letter-spacing: .08rem;
-    font-size: 1.7rem
-}
-#add-on-form > div:not(.plan-active)
-{
-    border: 1px solid var(--text-secondary)
-}
-#add-on-form > div > input
-{
-    appearance: none;
-    display: flex;
-    justify-content: center
-}
-#add-on-form > div > input::before
-{
-    content: '';
-    display: block;
-    width: 22px;
-    aspect-ratio: 1 / 1;
-    border-radius: 5px
-}
-#add-on-form > div > input:not(:checked)::before
-{
-    border: 1px solid var(--text-secondary)
-}
-#add-on-form > div > input:checked::before
-{
-    content: url(../images/icon-checkmark.svg);
-    background-color: var(--add-on-color);
-    display: flex;
-    justify-content: center;
-    align-items: center
-}
-#add-on-form > div > div
-{
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    grid-area: details
-}
-#add-on-form > div .head
-{
-    font-weight: 700;
-    font-size: 1.9rem
-}
-#add-on-form > div .desc
-{
-    color: var(--text-secondary)
-}
-#add-on-form > div > span
-{
-    color: var(--add-on-color);
-    grid-area: cost
-}
-
 @media screen and (width >= 1440px)
 {
+    body
+    {
+        background-color: var(--bg);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px
+    }
+
+    :is(body, section > header > *, #root > aside > ul)
+    {
+        margin: 0
+    }
+
+    #root
+    {
+        background-color: var(--color-white);
+        width: 100rem;
+        height: 60rem;
+        border-radius: 15px;
+        box-shadow: 0 50px 80px -30px var(--shadow);
+        padding: 15px 0 15px 15px;
+        display: flex
+    }
+    #root > aside
+    {
+        background-image: url(../images/bg-sidebar-desktop.svg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 28%;
+        border-radius: 10px;
+        color: var(--color-white);
+        padding: 40px 0 0 40px;
+        box-sizing: border-box
+    }
+    #root > aside > ul
+    {
+        text-transform: uppercase;
+        list-style-type: none;
+        padding: 0;
+        counter-reset: bullet;
+        display: flex;
+        flex-direction: column;
+        gap: 40px
+    }
+    #root > section
+    {
+        width: 48%;
+        height: 90%;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+        padding: 50px 102px 0
+    }
+    #root > section > header
+    {
+        display: flex;
+        flex-direction: column;
+        gap: 10px
+    }
+    #root > section h1
+    {
+        font-size: 2.6rem
+    }
+    #root > section p
+    {
+        color: var(--text-secondary);
+        letter-spacing: .08rem;
+        font-size: 1.7rem
+    }
+    #root > section > span
+    {
+        position: absolute;
+        bottom: 15px;
+        color: var(--text-secondary);
+        font-weight: 700
+    }
     #root > section > span:hover
     {
         color: var(--color)
     }
+    #root > section > button
+    {
+        align-self: flex-end;
+        position: absolute;
+        bottom: 0;
+        background-color: var(--color);
+        color: var(--color-white);
+        border: none;
+        border-radius: 10px;
+        padding: 15px 25px;
+        font-family: inherit;
+        letter-spacing: .08rem
+    }
+    #root > section > :is(span, button)
+    {
+        font-size: 1.7rem
+    }
+    #root #personal-form
+    {
+        display: flex;
+        flex-direction: column;
+        gap: 30px
+    }
+    #root #personal-form > div
+    {
+        display: flex;
+        flex-direction: column;
+        gap: 10px
+    }
+    #root #personal-form label
+    {
+        display: flex;
+        justify-content: space-between
+    }
+    #root #personal-form label::before
+    {
+        content: attr(data-label)
+    }
+    #root #personal-form label::after
+    {
+        content: attr(data-invalid);
+        color: var(--color-danger);
+        font-weight: 700
+    }
     #root #personal-form input
+    {
+        border: 1px solid var(--text-secondary);
+        background-color: transparent;
+        border-radius: 10px;
+        padding: 15px;
+        font-family: inherit;
+        font-size: 1.4rem;
+        letter-spacing: .08rem;
+        color: var(--color);
+        outline: 1px solid var(--color)
+    }
+    #root #personal-form input:focus
     {
         outline: 1px solid var(--color)
     }
+    #root #personal-form input.invalid
+    {
+        outline: 1px solid var(--color-danger)
+    }
+    #root #plan-form
+    {
+        display: flex;
+        flex-direction: column;
+        gap: 50px
+    }
+
+    aside li
+    {
+        counter-increment: bullet;
+        display: grid;
+        grid-template-areas: 'counter step' 'counter text';
+        grid-template-columns: 36px 1fr;
+        grid-gap: 5px 15px
+    }
+    aside li::before
+    {
+        content: counter(bullet);
+        aspect-ratio: 1 / 1;
+        border-radius: 50%;
+        grid-area: counter;
+        align-self: center;
+        display: flex;
+        justify-content: center;
+        align-items: center
+    }
+    aside li:not(.active)::before
+    {
+        border: 1px solid var(--color-white)
+    }
+    aside li > :first-child
+    {
+        grid-area: step;
+        font-size: 1.4rem;
+        opacity: 60%
+    }
+    aside li > :last-child
+    {
+        grid-area: text;
+        font-weight: 700
+    }
+
+    #plan-details
+    {
+        display: flex;
+        gap: 20px
+    }
+    #plan-details > div
+    {
+        flex-grow: 1;
+        border-radius: 10px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 40px
+    }
+    #plan-details > div:not(.plan-active)
+    {
+        border: 1px solid var(--text-secondary)
+    }
+    #plan-details > div > div
+    {
+        display: flex;
+        flex-direction: column;
+        gap: 10px
+    }
+    #plan-details > div span:first-of-type
+    {
+        font-size: 2rem;
+        font-weight: 700
+    }
+    #plan-details > div .plan-amt
+    {
+        color: var(--text-secondary);
+        font-size: 1.7rem
+    }
+    #plan-details > div .free-info
+    {
+        letter-spacing: 0
+    }
+    #plan-details img
+    {
+        width: 50px
+    }
+
+    #plan-period-option
+    {
+        background-color: var(--plan-bg);
+        padding: 25px 0;
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+        border-radius: 10px;
+        font-weight: 700
+    }
+    #plan-period-option > span:first-of-type
+    {
+        color: var(--span-color);
+        transition: color .5s
+    }
+    #plan-period-option > input
+    {
+        appearance: none;
+        background-color: var(--color);
+        width: 50px;
+        aspect-ratio: 1 / .5;
+        border-radius: 20px;
+        padding: 5px;
+        display: flex
+    }
+    #plan-period-option > input::before
+    {
+        content: '';
+        background-color: var(--color-white);
+        width: 17px;
+        aspect-ratio: 1 / 1;
+        border-radius: 50%;
+        translate: 0;
+        transition: translate .5s
+    }
+    #plan-period-option > input + span
+    {
+        color: var(--text-secondary);
+        transition: color .5s
+    }
+    #plan-period-option > input:checked::before
+    {
+        translate: 23px
+    }
+    #plan-period-option > input:checked + span
+    {
+        color: var(--color)
+    }
+
+    #add-on-form
+    {
+        display: flex;
+        flex-direction: column;
+        gap: 20px
+    }
+    #add-on-form > div
+    {
+        border-radius: 10px;
+        padding: 20px 20px 20px 0;
+        display: grid;
+        grid-template-areas: 'check details cost';
+        grid-template-columns: 2fr 7fr 1fr;
+        align-items: center;
+        letter-spacing: .08rem;
+        font-size: 1.7rem
+    }
+    #add-on-form > div:not(.plan-active)
+    {
+        border: 1px solid var(--text-secondary)
+    }
+    #add-on-form > div > input
+    {
+        appearance: none;
+        display: flex;
+        justify-content: center
+    }
+    #add-on-form > div > input::before
+    {
+        content: '';
+        display: block;
+        width: 22px;
+        aspect-ratio: 1 / 1;
+        border-radius: 5px
+    }
+    #add-on-form > div > input:not(:checked)::before
+    {
+        border: 1px solid var(--text-secondary)
+    }
+    #add-on-form > div > input:checked::before
+    {
+        content: url(../images/icon-checkmark.svg);
+        background-color: var(--add-on-color);
+        display: flex;
+        justify-content: center;
+        align-items: center
+    }
+    #add-on-form > div > div
+    {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        grid-area: details
+    }
+    #add-on-form > div .head
+    {
+        font-weight: 700;
+        font-size: 1.9rem
+    }
+    #add-on-form > div .desc
+    {
+        color: var(--text-secondary)
+    }
+    #add-on-form > div > span
+    {
+        color: var(--add-on-color);
+        grid-area: cost
+    }
+
 
     :is(#plan-details > div:hover, #add-on-form > div > span:hover)
     {
@@ -365,20 +362,20 @@ aside li > :last-child
     {
         cursor: pointer
     }
-}
 
-.attribution
-{
-    font-size: 1.1rem;
-    text-align: center
-}
-.attribution a
-{
-    color: hsl(228, 45%, 44%)
-}
+    .attribution
+    {
+        font-size: 1.1rem;
+        text-align: center
+    }
+    .attribution a
+    {
+        color: hsl(228, 45%, 44%)
+    }
 
-::placeholder
-{
-    font-weight: 700;
-    font-size: 1.4rem
+    ::placeholder
+    {
+        font-weight: 700;
+        font-size: 1.4rem
+    }
 }
