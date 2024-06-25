@@ -1,7 +1,33 @@
 function Add({h1, p, id, prev, next})
 {
     function activeEnable(e)
-    {}
+    {
+        let el = e.target
+
+        if(el.nodeName.toLowerCase() == 'input')
+            el = (el.parentElement)
+        else if(el.nodeName.toLowerCase() == 'span')
+        {
+            if(el.parentElement.children[0].nodeName.toLowerCase() == 'input')
+                el = el.parentElement
+            else
+                el = el.parentElement.parentElement
+
+            el.children[0].checked = !el.children[0].checked
+        }
+        else if(el.nodeName.toLowerCase() == 'div')
+        {
+            if(el.parentElement.children[0].nodeName.toLowerCase() == 'span')
+                el = el.parentElement
+
+            el.children[0].checked = !el.children[0].checked
+        }
+
+        if(!el.children[0].checked && (el.classList.length == 1))
+            el.removeAttribute('class')
+        else
+            el.classList.add('plan-active')
+    }
     
     return <>
         <header>
