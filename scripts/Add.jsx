@@ -1,6 +1,6 @@
 import { useEffect } from "react"
 
-function Add({h1, p, id, prev, next})
+function Add({h1, p, id, prev, next, dur})
 {
     function activeEnable(e)
     {
@@ -34,9 +34,17 @@ function Add({h1, p, id, prev, next})
     useEffect(() => {
         const acs = document.getElementsByClassName('add-cost')
 
-        for(const ac of acs)
-            ac.innerText = ac.dataset.month
-    }, [])
+        if(dur == 'month')
+        {
+            for(const ac of acs)
+                ac.innerText = ac.dataset.month
+        }
+        else
+        {
+            for(const ac of acs)
+                ac.innerText = ac.dataset.year
+        }
+    }, [dur])
     
     return <>
         <header>

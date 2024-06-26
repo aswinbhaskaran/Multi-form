@@ -22,7 +22,7 @@ function Section({els, id, prev, next})
 								setPlanDur('month')
 							}}/>
 					else if(id == 3)
-						return <Add key={id} h1={el.h1} p={el.p} id={el.eID} prev={prev} next={next}/>
+						return <Add key={id} h1={el.h1} p={el.p} id={el.eID} prev={prev} next={next} dur={planDur}/>
 				}
 			})}
 		</section>)

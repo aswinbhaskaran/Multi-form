@@ -65,7 +65,7 @@ function Plan({h1, p, id, prev, next, dur, stateChange})
 			for(const s of ps)
 				s.innerText = s.dataset.month
 		}
-		else if(dur == 'year')
+		else
 		{
 			for(const s of ps)
 				s.innerText = s.dataset.year
