@@ -5,7 +5,7 @@ import { useState } from 'react';
 import Summary from './Summary';
 
 
-function Section({els, id, prev, next})
+export default function Section({els, id, prev, next})
 {
 	const [planDur, setPlanDur] = useState('month')
 	
@@ -30,5 +30,3 @@ function Section({els, id, prev, next})
 			})}
 		</section>)
 }
-
-export default Section

@@ -31,13 +31,14 @@ const els = [{
 		id: 4,
 		h1: 'Finishing up',
 		p: 'Double-check everything looks OK before confirming.',
+		eID: 'summary',
 		s1: 'Step 4',
 		s2: 'Summary'
 	}]
 
-function App()
+export default function App()
 {
-	const [elementID, setElementID] = useState(3)
+	const [elementID, setElementID] = useState(4)
 	
 	function nextPage(e)
 	{
@@ -100,5 +101,3 @@ function App()
 			<Section els={els} id={elementID} prev={() => setElementID(elementID - 1)} next={nextPage}/>
 		</>)
 }
-
-export default App

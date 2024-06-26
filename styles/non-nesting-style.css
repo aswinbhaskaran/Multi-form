@@ -356,6 +356,55 @@
         color: var(--text-secondary)
     }
 
+    #summary
+    {
+        display: flex;
+        flex-direction: column;
+        gap: 20px
+    }
+    #summary > div:first-of-type
+    {
+        padding: 20px;
+        background-color: var(--plan-bg);
+        border-radius: 7px
+    }
+    #summary #sum-flex
+    {
+        display: flex;
+        flex-direction: column;
+        gap: 15px
+    }
+    #summary #sum-flex + div
+    {
+        display: flex;
+        justify-content: space-between
+    }
+    #summary #separator
+    {
+        width: 100%
+    }
+    #summary #separator ~ div
+    {
+        display: flex;
+        justify-content: space-between
+    }
+    #summary #sum-plan
+    {
+        display: flex;
+        justify-content: space-between;
+        align-items: center
+    }
+    #summary #sum-plan > div
+    {
+        display: flex;
+        flex-direction: column;
+        gap: 10px
+    }
+    #summary > div:last-of-type
+    {
+        padding-inline: 20px
+    }
+
 
     :is(#plan-details > div:hover, #add-on-form > div > span:hover)
     {
@@ -369,8 +418,9 @@
 
     .attribution
     {
-        font-size: 1.1rem;
-        text-align: center
+        font-size: 1.7rem;
+        position: fixed;
+        bottom: 0
     }
     .attribution a
     {

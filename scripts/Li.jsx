@@ -1,4 +1,4 @@
-function Li({els, cur})
+export default function Li({els, cur})
 {
     return els.map(el => {
         if(el.id == cur)
@@ -14,5 +14,3 @@ function Li({els, cur})
             <span key={`span-${el.id + 1}`}>{el.s2}</span>
         </li>})
 }
-
-export default Li

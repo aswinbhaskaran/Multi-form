@@ -1,6 +1,6 @@
 import Li from './Li'
 
-function Aside({cur, els})
+export default function Aside({cur, els})
 {
 	return (<aside>
 			<ul>
@@ -8,5 +8,3 @@ function Aside({cur, els})
 			</ul>
 		</aside>)
 }
-
-export default Aside

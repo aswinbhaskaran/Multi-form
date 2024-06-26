@@ -1,4 +1,4 @@
-function Personal({h1, p, id, next})
+export default function Personal({h1, p, id, next})
 {
 	function focusIn(e)
 	{
@@ -42,5 +42,3 @@ function Personal({h1, p, id, next})
 			<button type="button" onClick={next}>Next Step</button>
 		</>)
 }
-
-export default Personal

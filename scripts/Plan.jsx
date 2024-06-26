@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-function Plan({h1, p, id, prev, next, dur, stateChange})
+export default function Plan({h1, p, id, prev, next, dur, stateChange})
 {
 	function activeEnable(e)
 	{
@@ -138,5 +138,3 @@ function Plan({h1, p, id, prev, next, dur, stateChange})
 			<button type="button" onClick={next}>Next Step</button>
 		</>)
 }
-
-export default Plan

@@ -437,10 +437,68 @@
 		}
 	}
 
+	#summary
+	{
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+
+		& > div:first-of-type
+		{
+			padding: 20px;
+			background-color: var(--plan-bg);
+			border-radius: 7px
+		}
+
+		#sum-flex
+		{
+			display: flex;
+			flex-direction: column;
+			gap: 15px;
+
+			& + div
+			{
+				display: flex;
+				justify-content: space-between
+			}
+		}
+
+		#separator
+		{
+			width: 100%;
+
+			& ~ div
+			{
+				display: flex;
+				justify-content: space-between
+			}
+		}
+
+		#sum-plan
+		{
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+
+			& > div
+			{
+				display: flex;
+				flex-direction: column;
+				gap: 10px
+			}
+		}
+
+		& > div:last-of-type
+		{
+			padding-inline: 20px
+		}
+	}
+
 	.attribution
 	{
-		font-size: 1.1rem;
-		text-align: center;
+		font-size: 1.7rem;
+		position: fixed;
+		bottom: 0;
 
 		& a
 		{

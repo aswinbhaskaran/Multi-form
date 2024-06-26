@@ -1,6 +1,6 @@
 import { useEffect } from "react"
 
-function Add({h1, p, id, prev, next, dur})
+export default function Add({h1, p, id, prev, next, dur})
 {
     function activeEnable(e)
     {
@@ -96,5 +96,3 @@ function Add({h1, p, id, prev, next, dur})
         <button type="button" onClick={next}>Next Step</button>
     </>
 }
-
-export default Add
