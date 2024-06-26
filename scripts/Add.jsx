@@ -93,7 +93,7 @@ function Add({h1, p, id, prev, next, dur})
 
         <span onClick={prev}>Go Back</span>
 
-        {/* <button type="button" onClick={next}>Next Step</button> */}
+        <button type="button" onClick={next}>Next Step</button>
     </>
 }
 

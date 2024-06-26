@@ -26,6 +26,13 @@ const els = [{
 		eID: 'add-on-form',
 		s1: 'Step 3',
 		s2: 'Add-ons'
+	},
+	{
+		id: 4,
+		h1: 'Finishing up',
+		p: 'Double-check everything looks OK before confirming.',
+		s1: 'Step 4',
+		s2: 'Summary'
 	}]
 
 function App()

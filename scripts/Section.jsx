@@ -2,6 +2,7 @@ import Personal from './Personal';
 import Plan from './Plan';
 import Add from './Add';
 import { useState } from 'react';
+import Summary from './Summary';
 
 
 function Section({els, id, prev, next})
@@ -23,6 +24,8 @@ function Section({els, id, prev, next})
 							}}/>
 					else if(id == 3)
 						return <Add key={id} h1={el.h1} p={el.p} id={el.eID} prev={prev} next={next} dur={planDur}/>
+					else
+						return <Summary key={id} h1={el.h1} p={el.p} id={el.eID} prev={prev}/>
 				}
 			})}
 		</section>)
