@@ -330,26 +330,30 @@
         justify-content: center;
         align-items: center
     }
-    #add-on-form > div > div
+    #add-on-form > div > span
+    {
+        color: var(--add-on-color);
+        grid-area: cost
+    }
+    #add-on-form .add-desc
     {
         display: flex;
         flex-direction: column;
         gap: 5px;
         grid-area: details
     }
-    #add-on-form > div .head
+    #add-on-form .add-desc > span
+    {
+        width: fit-content
+    }
+    #add-on-form .head
     {
         font-weight: 700;
         font-size: 1.9rem
     }
-    #add-on-form > div .desc
+    #add-on-form .desc
     {
         color: var(--text-secondary)
-    }
-    #add-on-form > div > span
-    {
-        color: var(--add-on-color);
-        grid-area: cost
     }
 
 

@@ -1,3 +1,5 @@
+import { useEffect } from "react"
+
 function Add({h1, p, id, prev, next})
 {
     function activeEnable(e)
@@ -5,7 +7,7 @@ function Add({h1, p, id, prev, next})
         let el = e.target
 
         if(el.nodeName.toLowerCase() == 'input')
-            el = (el.parentElement)
+            el = el.parentElement
         else if(el.nodeName.toLowerCase() == 'span')
         {
             if(el.parentElement.children[0].nodeName.toLowerCase() == 'input')
@@ -17,7 +19,7 @@ function Add({h1, p, id, prev, next})
         }
         else if(el.nodeName.toLowerCase() == 'div')
         {
-            if(el.parentElement.children[0].nodeName.toLowerCase() == 'span')
+            if(el.children[0].nodeName.toLowerCase() == 'span')
                 el = el.parentElement
 
             el.children[0].checked = !el.children[0].checked
@@ -28,6 +30,13 @@ function Add({h1, p, id, prev, next})
         else
             el.classList.add('plan-active')
     }
+
+    useEffect(() => {
+        const acs = document.getElementsByClassName('add-cost')
+
+        for(const ac of acs)
+            ac.innerText = ac.dataset.month
+    }, [])
     
     return <>
         <header>
@@ -40,37 +49,37 @@ function Add({h1, p, id, prev, next})
             <div onClick={activeEnable}>
                 <input type="checkbox"/>
 
-                <div>
+                <div className="add-desc">
                     <span className="head">Online services</span>
 
                     <span className="desc">Access to multiplayer games</span>
                 </div>
 
-                <span>+$1/mo</span>
+                <span className='add-cost' data-month='+$1/mo' data-year='+$10/yr'></span>
             </div>
 
             <div onClick={activeEnable}>
                 <input type="checkbox"/>
 
-                <div>
+                <div className="add-desc">
                     <span className="head">Larger storage</span>
 
                     <span className="desc">Extra 1TB of cloud save</span>
                 </div>
 
-                <span>+$2/mo</span>
+                <span className='add-cost' data-month='+$2/mo' data-year='+$20/yr'></span>
             </div>
             
             <div onClick={activeEnable}>
                 <input type="checkbox"/>
 
-                <div>
+                <div className="add-desc">
                     <span className="head">Customizable profile</span>
 
                     <span className="desc">Custom theme on your profile</span>
                 </div>
 
-                <span>+$2/mo</span>
+                <span className='add-cost' data-month='+$2/mo' data-year='+$20/yr'></span>
             </div>
         </div>
 

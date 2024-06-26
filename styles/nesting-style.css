@@ -399,25 +399,6 @@
 				}
 			}
 
-			& > div
-			{
-				display: flex;
-				flex-direction: column;
-				gap: 5px;
-				grid-area: details
-			}
-
-			.head
-			{
-				font-weight: 700;
-				font-size: 1.9rem
-			}
-
-			.desc
-			{
-				color: var(--text-secondary)
-			}
-
 			& > span
 			{
 				color: var(--add-on-color);
@@ -429,6 +410,30 @@
 				cursor: pointer;
 				border: 1px solid var(--color)
 			}
+		}
+
+		.add-desc
+		{
+			display: flex;
+			flex-direction: column;
+			gap: 5px;
+			grid-area: details;
+
+			& > span
+			{
+				width: fit-content
+			}
+		}
+
+		.head
+		{
+			font-weight: 700;
+			font-size: 1.9rem
+		}
+
+		.desc
+		{
+			color: var(--text-secondary)
 		}
 	}
 

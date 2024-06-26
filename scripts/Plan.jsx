@@ -53,7 +53,7 @@ function Plan({h1, p, id, prev, next, dur, stateChange})
 				span.removeAttribute('style')
 		}
 
-		stateChange(e)
+		stateChange(e, fs[0])
 	}
 
 	useEffect(() => {
@@ -67,8 +67,12 @@ function Plan({h1, p, id, prev, next, dur, stateChange})
 		}
 		else if(dur == 'year')
 		{
-			for(const s of fs)
+			for(const s of ps)
 				s.innerText = s.dataset.year
+
+			for(const s of fs)
+				if(s.classList.contains('d-none'))
+					s.classList.remove('d-none')
 		}
 
 		document.querySelector('input').checked = (dur == 'year')
